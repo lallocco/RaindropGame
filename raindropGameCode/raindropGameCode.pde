@@ -30,5 +30,8 @@ void draw() {
     if (r[i].pos.y > height + r[i].diam/2) {
       r[i].reset();
     }
+    if (r[i].IsInContactWith(bucket)) {
+      r[i].reset();
+    }
   }
 }

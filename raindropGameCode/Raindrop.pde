@@ -40,4 +40,12 @@ class Raindrop {
       return false;
     }
   }
+  
+  boolean IsInContactWith(Catcher bucket){
+    if (pos.dist(bucket.pos) < diam/2 + bucket.diam/2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
