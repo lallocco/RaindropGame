@@ -7,7 +7,7 @@ class Raindrop {
  
   Raindrop(float x, int y) {
     diam = 50;
-    pos = new PVector(random(diam, width-diam), 0);
+    pos = new PVector(random(diam, width-diam), random(0,-10));
     vel = new PVector(0, .5);
     grav = new PVector(0, .5);
     c = color(255, 255, 255); 
