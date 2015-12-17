@@ -19,6 +19,7 @@ void setup() {
 void draw() {
   mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
   background(0, 200, 255);
+  raindrops.add(new Raindrop(random(width), 0));
   bucket.display();
   for (int i = 0; i < count; i++) {
     r[i].fall();         //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
