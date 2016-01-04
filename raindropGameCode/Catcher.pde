@@ -11,6 +11,6 @@ class Catcher {
     fill(139, 69, 19);
     noStroke();
     loc = new PVector(mouseX, mouseY);
-    rect(loc.x, loc.y, diam+10, diam);
+    rect(loc.x, loc.y, diam, diam);
   }
 }
