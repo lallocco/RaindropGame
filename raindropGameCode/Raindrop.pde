@@ -2,15 +2,21 @@ class Raindrop {
   PVector loc, vel, grav;
   int diam;
   color c;
+  boolean start = true;
 
   
  
-  Raindrop(PVector pos) {
+  Raindrop(PVector pos) { //true-false will go in here
     diam = 75;
     loc = pos;
     vel = new PVector(0, .5);
     grav = new PVector(0, .5);
-    c = color(255, 255, 255); 
+    if (start = true) { 
+      c = color(0, 255, 0); 
+    }
+    else if (start = false) {
+      c = color(255, 0, 0);
+    }
   }
   
   void display(){
@@ -30,7 +36,7 @@ class Raindrop {
     loc.x = random(0, width);
     vel = new PVector(0, .5);
     vel.mult(10);
-    c = color(255, 255, 255);
+    c = color(0, 255, 0);
   }
   
   boolean IsInContactWith(PVector mouse, float bucketdiam){

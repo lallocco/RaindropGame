@@ -8,9 +8,9 @@ class Catcher {
   }
 
   void display() {
-    fill(34, 67, 45);
+    fill(139, 69, 19);
     noStroke();
     loc = new PVector(mouseX, mouseY);
-    ellipse(loc.x, loc.y, diam, diam);
+    rect(loc.x, loc.y, diam+10, diam);
   }
 }
