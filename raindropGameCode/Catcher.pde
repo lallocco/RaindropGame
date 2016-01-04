@@ -1,16 +1,16 @@
 class Catcher {
-  PVector pos;
-  int diam;
+  PVector loc;
+  float diam;
 
-  Catcher(float x, float y) {
-    diam = 50;
-    pos = new PVector(mouseX, mouseY);
+  Catcher(float width) {
+    diam = width;
+    loc = new PVector(mouseX, mouseY);
   }
 
   void display() {
     fill(34, 67, 45);
     noStroke();
-    pos = new PVector(mouseX, mouseY);
-    ellipse(pos.x, pos.y, diam, diam);
+    loc = new PVector(mouseX, mouseY);
+    ellipse(loc.x, loc.y, diam, diam);
   }
 }

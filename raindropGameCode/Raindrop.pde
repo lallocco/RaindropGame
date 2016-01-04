@@ -1,13 +1,13 @@
 class Raindrop {
-  PVector pos, vel, grav;
+  PVector loc, vel, grav;
   int diam;
   color c;
 
   
  
-  Raindrop(float x, int y) {
-    diam = 50;
-    pos = new PVector(random(diam, width-diam), random(0,-10));
+  Raindrop(PVector pos) {
+    diam = 75;
+    loc = pos;
     vel = new PVector(0, .5);
     grav = new PVector(0, .5);
     c = color(255, 255, 255); 
@@ -16,33 +16,25 @@ class Raindrop {
   void display(){
     fill(c);
     noStroke();
-    ellipse(pos.x, pos.y, diam, diam);
+    ellipse(loc.x, loc.y, diam, diam);
   }
   
   void fall(){
-    pos.add(vel);
+    loc.add(vel);
     vel.add(grav);
   }
   
   void reset(){
     diam = 50;
-    pos = new PVector(random(diam, width-diam), 0);
+    loc.y = 0;
+    loc.x = random(0, width);
     vel = new PVector(0, .5);
     vel.mult(10);
     c = color(255, 255, 255);
   }
   
-  boolean IsInContactWith(PVector point){
-    if (point.dist(pos) < diam/2){
-      return true;
-    }
-      else{
-      return false;
-    }
-  }
-  
-  boolean IsInContactWith(Catcher bucket){
-    if (pos.dist(bucket.pos) < diam/2 + bucket.diam/2) {
+  boolean IsInContactWith(PVector mouse, float bucketdiam){
+    if (loc.dist(mouse) < diam/2 + bucketdiam/2) {
       return true;
     } else {
       return false;
