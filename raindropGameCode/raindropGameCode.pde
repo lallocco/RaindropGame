@@ -2,8 +2,8 @@ PVector mouse;   //declare a PVector for mouse
 int count = 100;
 ArrayList<Raindrop> raindrops = new ArrayList<Raindrop>();
 Catcher bucket;
-int score;
-float leafcolor; 
+int score; //create a variable for score
+float leafcolor; //create a variable for leafcolor
 
 // On your own, create an array of Raindrop objects instead of just one
 // Use the array instead of the single object
@@ -16,18 +16,18 @@ void setup() {
   raindrops.add(new Raindrop(new PVector(width/2, 0)));
   bucket = new Catcher(25);
   score=0;
-  leafcolor = random(1, 100);
+  leafcolor = random(1, 100); //assigns a random value to leafcolor
   textSize(40);
   textAlign(CENTER);
 }
 
 void draw() {
-  println(leafcolor);
+  println(leafcolor); //prints leafcolor value at command line
   mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
   background(0, 200, 255);
-  bucket.display();
-  text(score, width/2, 100);
-  text("Catch the colorful, red leaves, not the boring green leaves!", width/2, 50);
+  bucket.display(); //displays the bucket on the screen
+  text(score, width/2, 100); //displays text with a value equal to score
+  text("Catch the colorful, red leaves, not the boring green leaves!", width/2, 50); //displays instructional text
   for (int i = 0; i < raindrops.size(); i++) {
     Raindrop r = raindrops.get(i);
     r.fall();         //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
