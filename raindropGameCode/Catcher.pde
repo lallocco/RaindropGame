@@ -3,7 +3,7 @@ class Catcher {
   float diam;
 
   Catcher(float width) {
-    diam = width;
+    diam = width+50;
     loc = new PVector(mouseX, mouseY);
   }
 
