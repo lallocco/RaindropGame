@@ -26,7 +26,7 @@ class Raindrop {                  //creates raindrop class
     
   }
   
-  void fall(){          //creates fall function for leaf
+  void fall(){   //creates fall function for leaf
     loc.add(vel);
     vel.add(grav);
   }
@@ -41,7 +41,7 @@ class Raindrop {                  //creates raindrop class
   }
   
   boolean IsInContactWith(float bucketdiam){       //creates boolean that allows leaf to recognize contact with bucket
-    if (loc.dist(mouse) < diam/2 + bucket.diam/2) {
+    if (loc.dist(mouse) < diam + bucket.diam) {
       return true;
     } else {
       return false;
