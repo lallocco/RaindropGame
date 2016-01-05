@@ -41,6 +41,9 @@ void draw() {
       if (leafcolor >= 50) {
         score=score+1;
       }
+      if (leafcolor < 50) {
+        score=score-1;
+      }
       leafcolor = random(1, 100);
     }
   }
